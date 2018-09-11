@@ -62,7 +62,12 @@ const resolvers = {
   },
 };
 
-const schema = new ApolloServer({ typeDefs, resolvers });
+const schema = new ApolloServer({ 
+  typeDefs, resolvers,
+  engine: {
+    apiKey: "service:vinhlee95-2446:K0i_jMHCuPwARoAAAQ0WkA"
+  }
+});
 module.exports = schema;
 
 
