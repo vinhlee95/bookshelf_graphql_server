@@ -15,6 +15,8 @@ const connectToDB = async () => {
   const DB_NAME = process.env.MONGO_DB_NAME || 'sample-db';
   const MONGO_CONNECTION_STRING = `mongodb://${mongoUserCredentials}${MONGO_URL}/${DB_NAME}`;
 
+  await mongoose.connect(MONGO_CONNECTION_STRING);
+  connection = mongoose;
 
 const getDB = () => {
   if (!connection) {
