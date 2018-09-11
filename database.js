@@ -17,6 +17,7 @@ const connectToDB = async () => {
 
   await mongoose.connect(MONGO_CONNECTION_STRING);
   connection = mongoose;
+};
 
 const getDB = () => {
   if (!connection) {
