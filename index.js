@@ -5,7 +5,7 @@ const { connectToDB } = require('./database');
 const app = express();
 schema.applyMiddleware({ app });
 
-connectToDB():
+connectToDB();
 
 
 app.listen(process.env.PORT || 4000, () => {
