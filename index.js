@@ -1,20 +1,16 @@
 const express = require('express');
 const schema = require('./schema/schema');
 const { connectToDB } = require('./database');
-const { ApolloEngine } = require("apollo-engine");
+const cors = require('cors');
+
 connectToDB();
 
 const app = express();
+app.use(cors());
 schema.applyMiddleware({ app });
 
 
-const engine = new ApolloEngine({
-  apiKey: "service:vinhlee95-2446:K0i_jMHCuPwARoAAAQ0WkA"
-});
+const PORT = process.env.PORT || 4000;
 
-// Call engine.listen instead of app.listen(port)
-engine.listen({
-  port: process.env.PORT || 4000 ,
-  expressApp: app
-});
+app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
 
